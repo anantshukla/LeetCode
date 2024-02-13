@@ -7,20 +7,20 @@
 import collections
 class Solution:
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
-        deque = collections.deque()
-        deque.append(root)
+        deque = collections.deque([root])
         outputList = []
 
         while deque:
             # BFS and add append all children to the right
             rightMostNode = None
             numOfElementsAtLevel = len(deque)
+
             for _ in range(numOfElementsAtLevel):
                 node = deque.popleft()
-                rightMostNode = node
                 if node:
-                    if node.left: deque.append(node.left)
-                    if node.right: deque.append(node.right)
+                    rightMostNode = node
+                    deque.append(node.left)
+                    deque.append(node.right)
             if rightMostNode:
                 outputList.append(rightMostNode.val)
         return outputList
