@@ -7,3 +7,11 @@ class Solution:
             else:
                 hashmap[num] = 1
         return False
+
+        # hashSet = set()
+        # for num in nums:
+        #     if num in hashSet:
+        #         return True
+        #     else:
+        #         hashSet.add(num)
+        # return False
