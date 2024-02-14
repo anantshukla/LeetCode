@@ -6,4 +6,4 @@ class Solution:
                 return [hashMap[num], i]
             else:
                 hashMap[target-num] = i
-
+        
