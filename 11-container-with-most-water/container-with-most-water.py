@@ -3,7 +3,7 @@ class Solution:
         # Area = min-height * distance between i, j
         maxCap = 0
         l, r = 0, len(height) - 1
-        lMaxHeight, lPos = 0, 0
+        
         while l < r:
             maxCap = max(maxCap, min(height[l], height[r]) * (r-l))
             if height[l] < height[r]:
