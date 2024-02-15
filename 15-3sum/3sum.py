@@ -5,7 +5,7 @@ class Solution:
         
 
         for i in range(len(nums)):
-            
+            # Can skip the postive i - numbers
             if nums[i] > 0:
                 break
 
