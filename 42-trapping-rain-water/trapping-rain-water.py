@@ -16,7 +16,3 @@ class Solution:
                 totalWater += waterTrapped - height[i]
         
         return totalWater
-            
-
-
-        
