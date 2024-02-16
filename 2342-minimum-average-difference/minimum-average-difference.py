@@ -4,7 +4,7 @@ class Solution:
         totalSum = sum(nums)
 
         ansIdx, leftSum = 0, 0
-        minDiff = float('inf')
+        minDiff = 10 ** 6
         
         for i in range(n):
             leftSum += nums[i]
