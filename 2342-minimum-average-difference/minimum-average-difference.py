@@ -7,7 +7,10 @@ class Solution:
             forward_sum += val
 
             l_avg = forward_sum // (i + 1)
-            r_avg = (total_sum - forward_sum) // ((n - i - 1) if (n - i - 1) != 0 else (n - i))
+            if n - i - 1 != 0:
+                r_avg = (total_sum - forward_sum) // (n - i - 1)
+            else:
+                r_avg =  0
 
             if abs(r_avg - l_avg) < min_diff:
                 min_diff = abs(r_avg - l_avg)
