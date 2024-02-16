@@ -1,22 +1,17 @@
 class Solution:
     def minimumAverageDifference(self, nums: List[int]) -> int:
-        n = len(nums)
-        totalSum = sum(nums)
+        n, total_sum = len(nums), sum(nums)
+        forward_sum, min_idx, min_diff = 0, 0, float('inf')
 
-        ansIdx, leftSum = 0, 0
-        minDiff = float('inf')
-        
-        for i in range(n):
-            leftSum += nums[i]
-            lAvg = leftSum // (i+1)
-            rAvg = math.floor(totalSum - leftSum) // (n - i - 1) if (n - i - 1) !=0 else 0
+        for i, val in enumerate(nums):
+            forward_sum += val
 
-            currDiff = int(abs(rAvg - lAvg))
+            l_avg = forward_sum // (i + 1)
+            r_avg = (total_sum - forward_sum) // ((n - i - 1) if (n - i - 1) != 0 else (n - i))
 
-            if currDiff < minDiff:
-                minDiff = currDiff
-                ansIdx = i
-        
-        return ansIdx
-
+            if abs(r_avg - l_avg) < min_diff:
+                min_diff = abs(r_avg - l_avg)
+                min_idx = i
+            
+        return min_idx
         
