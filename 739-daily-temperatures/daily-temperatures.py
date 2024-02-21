@@ -7,7 +7,7 @@ class Solution:
             while len(stk) > 0 and curr_temp > stk[-1][1]:
                 stk_idx, stk_temp = stk.pop()
                 ans[stk_idx] = idx - stk_idx
-            stk.append([idx, curr_temp])            
+            stk.append((idx, curr_temp))            
         return ans
 
     # def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
