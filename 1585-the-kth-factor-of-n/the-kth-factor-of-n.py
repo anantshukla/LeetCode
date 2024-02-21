@@ -4,5 +4,5 @@ class Solution:
         for i in range(1, n + 1):
             if n % i == 0:
                 arr.append(i)
-        return arr[k - 1] if len(arr) > k-1 else -1
+        return arr[k - 1] if len(arr) >= k else -1
         
