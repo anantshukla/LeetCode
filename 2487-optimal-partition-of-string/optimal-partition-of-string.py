@@ -2,11 +2,11 @@ class Solution:
     def partitionString(self, s: str) -> int:
         num_partitions = 1
         setV = set()
-        for c in s:
-            if c in setV:
+        for char in s:
+            if char in setV:
                 num_partitions += 1
                 setV.clear()
-            setV.add(c)
+            setV.add(char)
         return num_partitions
 
 
