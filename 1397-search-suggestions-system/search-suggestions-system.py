@@ -10,8 +10,6 @@ class Solution:
             while l <= r and (i >= len(products[r]) or products[r][i] != searchWord[i]):
                 r -= 1
                 
-            print(l, r)
-                
             result.append([])
             for j in range(min(3, r - l + 1)):
                 result[-1].append(products[l + j])
