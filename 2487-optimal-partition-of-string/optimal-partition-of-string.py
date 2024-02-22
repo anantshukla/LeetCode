@@ -1,10 +1,9 @@
 class Solution:
     def partitionString(self, s: str) -> int:
-        setC = set()
-        numPart = 1
+        setChars, numPart = set(), 1
         for c in s:
-            if c in setC:
-                setC.clear()
+            if c in setChars:
+                setChars.clear()
                 numPart += 1
-            setC.add(c)
+            setChars.add(c)
         return numPart
