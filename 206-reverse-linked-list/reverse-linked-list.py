@@ -8,7 +8,6 @@ class Solution:
         currentNode = head
         previousNode = None
         while currentNode:
-            print(currentNode.val)
             nextNode = currentNode.next
             currentNode.next = previousNode
             
