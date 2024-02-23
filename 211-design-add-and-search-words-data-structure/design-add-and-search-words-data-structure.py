@@ -26,7 +26,6 @@ class WordDictionary:
                 for childPtr in node.nodeChars.values():
                     if recursiveSearch(substring[1:], childPtr):
                         return True
-
             else:
                 if char not in node.nodeChars:
                     return False
