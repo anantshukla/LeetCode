@@ -1,15 +1,14 @@
-class Node:
-    def __init__(self, key, val, next, prev):
-        self.key, self.val = key, val
-        self.prev, self.next = prev, next
-
-    
 class LRUCache:
+    class Node:
+        def __init__(self, key, val, next, prev):
+            self.key, self.val = key, val
+            self.prev, self.next = prev, next
+
     def __init__(self, capacity: int):
         self.hm = {}
         self.maxCap = capacity
-        self.lru = Node(0, 0, None, None)
-        self.mru = Node(0, 0, None, None)
+        self.lru = LRUCache.Node(0, 0, None, None)
+        self.mru = LRUCache.Node(0, 0, None, None)
         self.lru.next = self.mru
         self.mru.prev = self.lru
     
@@ -37,7 +36,7 @@ class LRUCache:
         if key in self.hm:
             self.delete(self.hm[key])
 
-        self.hm[key] = Node(key, value, None, None)
+        self.hm[key] = LRUCache.Node(key, value, None, None)
         self.insert(self.hm[key])
 
         if len(self.hm) > self.maxCap:
