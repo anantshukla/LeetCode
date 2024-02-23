@@ -7,9 +7,9 @@
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
         def recursiveCheck(t1, t2):
-            if t1 == t2 == None:
+            if not t1 and not t2:
                 return True
-            if (t1 == None and t2 !=None) or (t1 != None and t2 == None):
+            if not t1 or not t2:
                 return False
             if t1.val != t2.val:
                 return False
