@@ -13,11 +13,9 @@ class Solution:
 
             if not t1 and not t2:
                 continue
-            if (not t1 and t2) or (t1 and not t2):
+            if (not t1 and t2) or (t1 and not t2) or t1.val != t2.val:
                 return False
-            if t1.val != t2.val:
-                return False
-                
+            
             q1.append(t1.left)
             q1.append(t1.right)
 
