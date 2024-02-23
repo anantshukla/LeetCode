@@ -11,16 +11,17 @@ class Solution:
         while q1 and q2:
             t1, t2 = q1.pop(0), q2.pop(0)
 
-            if t1 == None and t2 == None:
+            if not t1 and not t2:
                 continue
-            if (t1 == None and t2 != None) or (t1 != None and t2 == None):
+            if (not t1 and t2) or (t1 and not t2):
                 return False
             if t1.val != t2.val:
                 return False
                 
             q1.append(t1.left)
-            q2.append(t2.left)
             q1.append(t1.right)
+
+            q2.append(t2.left)
             q2.append(t2.right)
 
         return not q1 and not q2
