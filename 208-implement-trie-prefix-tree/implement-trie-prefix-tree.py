@@ -25,6 +25,7 @@ class Trie:
         if node.endOfWord == True:
             return True
         return False
+    
     # def search(self, word: str) -> bool:
     #     def recursiveSearch(substring, node):
     #         if len(substring) == 0 and node.endOfWord == True:
