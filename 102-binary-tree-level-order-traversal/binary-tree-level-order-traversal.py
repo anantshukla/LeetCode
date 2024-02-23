@@ -10,15 +10,13 @@ class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         deque, res = collections.deque([root]), []
         while deque:
-            n = len(deque)
-            levelValues = []
+            n, levelValues = len(deque), []
             for _ in range(n):
                 node = deque.popleft()
                 if node:
                     deque.append(node.left)
                     deque.append(node.right)
                     levelValues.append(node.val)
-            
             if len(levelValues):
                 res.append(levelValues)
         return res
