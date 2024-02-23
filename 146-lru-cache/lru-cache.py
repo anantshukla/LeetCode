@@ -7,13 +7,10 @@ class LRUCache:
     def __init__(self, capacity: int):
         self.hm = {}
         self.maxCap = capacity
-        self.lru = LRUCache.Node(0, 0, None, None)
-        self.mru = LRUCache.Node(0, 0, None, None)
-        self.lru.next = self.mru
-        self.mru.prev = self.lru
+        self.lru, self.mru = LRUCache.Node(0, 0, None, None), LRUCache.Node(0, 0, None, None)
+        self.mru.prev, self.lru.next = self.lru, self.mru
     
-    # L - LRU
-    # R - MRU
+    # L - LRU, R - MRU
     def insert(self, node):
         prev, nxt = self.mru.prev, self.mru
         node.prev, node.next = prev, nxt
@@ -43,3 +40,4 @@ class LRUCache:
             curLRU = self.lru.next
             self.delete(curLRU)
             self.hm.pop(curLRU.key)
+
