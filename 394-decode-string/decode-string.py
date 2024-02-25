@@ -14,7 +14,5 @@ class Solution:
                 while stack and stack[-1].isdigit():
                     multiplier = stack.pop() + multiplier
                 stack.append(outStr * int(multiplier))
-        outStr = ""
-        while stack:
-            outStr = stack.pop() + outStr
-        return outStr
+        
+        return "".join(stack)
