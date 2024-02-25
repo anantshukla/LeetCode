@@ -11,4 +11,3 @@ class Solution:
             rProd *= nums[i]
         return res
         
-        
