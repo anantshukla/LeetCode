@@ -9,7 +9,7 @@ class Solution:
                 while stack[-1] != '[':
                     outStr = stack.pop() + outStr
                 stack.pop()
-
+                
                 multiplicationFactor = ""
                 while stack and stack[-1].isdigit():
                     multiplicationFactor = stack.pop() + multiplicationFactor
