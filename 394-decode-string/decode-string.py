@@ -1,22 +1,19 @@
 class Solution:
     def decodeString(self, s: str) -> str:
-        stack, ptr = [], 0
-        while ptr < len(s):
-            if s[ptr] != ']':
-                stack.append(s[ptr])
+        stack = []
+        for i in range(len(s)):
+            if s[i] != ']':
+                stack.append(s[i])
             else:
                 outStr = ""
                 while stack[-1] != '[':
                     outStr = stack.pop() + outStr
                 stack.pop()
                 
-                multiplicationFactor = ""
-                while stack and stack[-1] >= '0' and stack[-1] <= '9':
-                    multiplicationFactor = stack.pop() + multiplicationFactor
-                multiplicationFactor = int(multiplicationFactor)
-                outStr = outStr * multiplicationFactor
-                stack.append(outStr)
-            ptr += 1
+                multiplier = ""
+                while stack and stack[-1].isdigit():
+                    multiplier = stack.pop() + multiplier
+                stack.append(outStr * int(multiplier))
         outStr = ""
         while stack:
             outStr = stack.pop() + outStr
