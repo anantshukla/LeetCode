@@ -7,4 +7,4 @@ class Solution:
             if nums[currPtr] >= goalPtr - currPtr:
                 goalPtr = currPtr
         
-        return (currPtr == 0 and goalPtr == 0)
+        return goalPtr == 0
