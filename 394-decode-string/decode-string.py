@@ -11,7 +11,7 @@ class Solution:
                 stack.pop()
                 
                 multiplicationFactor = ""
-                while stack and stack[-1].isdigit():
+                while stack and stack[-1] >= '0' and stack[-1] <= '9':
                     multiplicationFactor = stack.pop() + multiplicationFactor
                 multiplicationFactor = int(multiplicationFactor)
                 outStr = outStr * multiplicationFactor
