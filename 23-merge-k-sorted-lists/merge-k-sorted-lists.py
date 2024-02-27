@@ -6,17 +6,15 @@
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         mergedLists = []
+        lists = deque(lists)
         if not lists:
             return None
         
         while len(lists) > 1:
-            while lists:
-                head1 = lists.pop()
-                head2 = lists.pop() if lists else None
-                newList = self.mergeTwoLists(head1, head2)
-                mergedLists.append(newList)
-            lists = mergedLists
-            mergedLists = []
+            head1 = lists.popleft()
+            head2 = lists.popleft() if lists else None
+            newList = self.mergeTwoLists(head1, head2)
+            lists.append(newList)
         
         return lists[0] if lists else lists
 
