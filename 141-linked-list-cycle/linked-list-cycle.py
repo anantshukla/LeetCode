@@ -13,7 +13,8 @@ class Solution:
         while forward and forward.next:
             rear = rear.next
             forward = forward.next.next
-            if forward == rear: return True
+            if forward == rear:
+                return True
         return False
 
 
