@@ -8,11 +8,11 @@ class Solution:
             if rear == forward:
                 break
         
-        rear2 = 0
+        rear = 0
         while True:
-            rear2 = nums[rear2]
             rear = nums[rear]
-            if rear2 == rear:
-                return rear2
+            forward = nums[forward]
+            if forward == rear:
+                return forward
             
             
