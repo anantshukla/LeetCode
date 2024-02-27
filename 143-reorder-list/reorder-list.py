@@ -12,8 +12,7 @@ class Solution:
         slow, fast = head, head.next
 
         while fast and fast.next:
-            slow = slow.next
-            fast = fast.next.next
+            slow, fast = slow.next, fast.next.next
         
         # Start reverse in-place
         prevNode, currNode = None, slow
@@ -29,6 +28,4 @@ class Solution:
             leftNext, rightNext = leftNode.next, rightNode.next
             leftNode.next, rightNode.next = rightNode, leftNext
             leftNode, rightNode = leftNext, rightNext
-        
-
         
