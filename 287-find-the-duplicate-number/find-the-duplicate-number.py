@@ -11,8 +11,8 @@ class Solution:
         rear2 = 0
         while True:
             rear2 = nums[rear2]
-            forward = nums[forward]
-            if rear2 == forward:
+            rear = nums[rear]
+            if rear2 == rear:
                 return rear2
             
             
