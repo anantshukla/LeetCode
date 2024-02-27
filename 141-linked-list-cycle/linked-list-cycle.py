@@ -5,6 +5,12 @@
 #         self.next = None
 
 class Solution:
+    
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        ptr1, ptr2 = head, head
+
+
+    # TC: O(n), SC: O(n)
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         hs = set()
         ptr = head
@@ -14,14 +20,5 @@ class Solution:
             hs.add(ptr)
             ptr = ptr.next
         return False
-        # ptr1, ptr2 = head, head
-
-        # while ptr1 and ptr2.next:
-        #     ptr1 = ptr1.next
-        #     ptr2 = ptr2.next.next
-
-        #     if ptr1.val == ptr2.val:
-        #         return True
-        # return False
 
         
