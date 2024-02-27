@@ -9,8 +9,7 @@ class Solution:
         Do not return anything, modify head in-place instead.
         """
         # Reverse the second half of the linkedList
-        slow = head
-        fast = head.next
+        slow, fast = head, head.next
 
         while fast and fast.next:
             slow = slow.next
@@ -23,19 +22,13 @@ class Solution:
             currNode.next = prevNode
             prevNode, currNode = currNode, nextNode
         
-        llHead = dummy = ListNode()
-        
         leftNode, rightNode = head, prevNode
-
+        
+        # Merge
         while leftNode and rightNode:
-            leftNext = leftNode.next
-            rightNext = rightNode.next
-            
-            leftNode.next = rightNode
-            rightNode.next = leftNext
-            
-            leftNode = leftNext
-            rightNode = rightNext
+            leftNext, rightNext = leftNode.next, rightNode.next
+            leftNode.next, rightNode.next = rightNode, leftNext
+            leftNode, rightNode = leftNext, rightNext
         
 
         
