@@ -10,7 +10,9 @@ class Solution:
         if not lists:
             return None
         
-        while len(lists) > 1:
+        while True:
+            if len(lists) == 1:
+                break
             head1 = lists.popleft()
             head2 = lists.popleft() if lists else None
             newList = self.mergeTwoLists(head1, head2)
