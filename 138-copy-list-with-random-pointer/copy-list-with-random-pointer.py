@@ -10,16 +10,13 @@ class Node:
 class Solution:
     def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
         oldPtr, oldToNewNodeMap = head, {None: None}
-
         while oldPtr:
             oldToNewNodeMap[oldPtr] = Node(oldPtr.val)
             oldPtr = oldPtr.next
-        
         oldPtr = head
         while oldPtr:
-            copyNode = oldToNewNodeMap[oldPtr]
-            copyNode.next = oldToNewNodeMap[oldPtr.next]
-            copyNode.random = oldToNewNodeMap[oldPtr.random]
+            newPtr = oldToNewNodeMap[oldPtr]
+            newPtr.next = oldToNewNodeMap[oldPtr.next]
+            newPtr.random = oldToNewNodeMap[oldPtr.random]
             oldPtr = oldPtr.next
-        
         return oldToNewNodeMap[head]
