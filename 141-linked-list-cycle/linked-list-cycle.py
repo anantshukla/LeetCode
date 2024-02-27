@@ -9,12 +9,11 @@ class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         rear, forward = head, head
         
-        while rear and forward and forward.next:
+        # Can just check forward, as it will always be 2x ahead of rear
+        while forward and forward.next:
             rear = rear.next
             forward = forward.next.next
-
-            if forward == rear:
-                return True
+            if forward == rear: return True
         return False
 
 
