@@ -18,7 +18,6 @@ class Solution:
         
         currPtr = head
         while currPtr:
-            print(currPtr.val)
             copyNode = oldToNewNodeMap[currPtr]
             copyNode.next = oldToNewNodeMap[currPtr.next]
             copyNode.random = oldToNewNodeMap[currPtr.random]
