@@ -8,15 +8,16 @@ class Solution:
         mergedLists = []
         if not lists:
             return None
-        ctr = 0
+        
         while len(lists) > 1:
-            print(ctr)
-            ctr += 1
-            head1 = lists.pop()
-            head2 = lists.pop() if lists else None
-            newList = self.mergeTwoLists(head1, head2)
-            lists.append(newList)
-            
+            while lists:
+                head1 = lists.pop()
+                head2 = lists.pop() if lists else None
+                newList = self.mergeTwoLists(head1, head2)
+                mergedLists.append(newList)
+            lists = mergedLists
+            mergedLists = []
+        
         return lists[0] if lists else lists
 
     def mergeTwoLists(self, head1, head2):
