@@ -5,13 +5,10 @@
 #         self.next = next
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
-        frontPtr = dummy = ListNode()
-        frontPtr.next = head
-        ctr = n
-        while ctr > 0:
+        backPtr = frontPtr = dummy = ListNode(0, head)
+        while n > 0:
             frontPtr = frontPtr.next
-            ctr -= 1
-        backPtr = dummy
+            n -= 1
 
         while frontPtr and frontPtr.next:
             frontPtr, backPtr = frontPtr.next, backPtr.next
