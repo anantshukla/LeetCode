@@ -4,10 +4,11 @@ class Solution:
         buckets = [[] for i in range(len(nums) + 1)]
         for num in nums:
             numFreqMap[num] = 1 + numFreqMap.get(num, 0)
-        # O(n)
+        
         for num, count in numFreqMap.items():
             buckets[count].append(num)
         res = []
+        # O(n + n)
         for i in range(len(buckets) - 1, 0, -1):
             for n in buckets[i]:
                 res.append(n)
