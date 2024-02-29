@@ -3,10 +3,12 @@ class Solution:
         maxCount, numsSet = 0, set(nums)
 
         for num in numsSet:
-            # If a 1 + num is present in the hash set, then continue
+            # We can ignore all values where num + 1 exist in the hash set
+            # Because we are searching for the upper bound of this subsequence
             if num + 1 in numsSet:
                 continue
-            # Find the lowest subsequence value
+            # We are at upper bound of this subsequence
+            # Now find the lower bound of the current subsequence
             curr = 1
             while num - curr in numsSet:
                 curr += 1
