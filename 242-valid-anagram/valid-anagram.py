@@ -7,5 +7,4 @@ class Solution:
             cs, ct = s[i], t[i]
             hMapS[cs] = 1 + hMapS.get(cs, 0)
             hMapT[ct] = 1 + hMapT.get(ct, 0)
-
         return hMapS == hMapT
