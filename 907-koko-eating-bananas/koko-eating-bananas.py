@@ -10,7 +10,7 @@ class Solution:
             
             time = 0
             for pile in piles:
-                time += math.ceil(float(pile) / mid)
+                time += math.ceil(pile / mid)
                         
             if time <= h:
                 minSpeed = mid
