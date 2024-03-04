@@ -1,6 +1,5 @@
 class Solution:
     def findMin(self, nums: List[int]) -> int:
-        curMaxIdx, curMax = -1, float('-inf')
         l, r = 0, len(nums) - 1
         while l <= r:
             mid = (l + r) // 2
