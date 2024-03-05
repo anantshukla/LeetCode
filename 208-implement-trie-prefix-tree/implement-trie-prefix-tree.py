@@ -23,17 +23,6 @@ class Trie:
                 return False
             node = node.nodeChars[char]
         return node.endOfWord
-    
-    # def search(self, word: str) -> bool:
-    #     def recursiveSearch(substring, node):
-    #         if len(substring) == 0:
-    #             return node.endOfWord
-            
-    #         char = substring[0]
-    #         if char not in node.nodeChars:
-    #             return False
-    #         return recursiveSearch(substring[1:], node.nodeChars[char])
-    #     return recursiveSearch(word, self.root)
 
 
     def startsWith(self, prefix: str) -> bool:
