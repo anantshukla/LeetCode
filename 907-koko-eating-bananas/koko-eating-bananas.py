@@ -12,11 +12,13 @@ class Solution:
             for pile in piles:
                 time += math.ceil(pile / mid)
                         
-            if time > h:
-                left = mid + 1
-            else:
+            if time <= h:
+                # Success. Go left - Speed can be reduced-> minimizing
                 minSpeed = mid
                 right = mid - 1
+            else:
+                # Go right - Speed needs to be increased
+                left = mid + 1
                 
         return minSpeed
 
