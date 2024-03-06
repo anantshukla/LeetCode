@@ -6,7 +6,7 @@ class Solution:
             stone_1 = heapq.heappop(stones)
             stone_2 = heapq.heappop(stones)
             print(stone_1, stone_2)
-            if stone_1 - stone_2 < 0:
+            if stone_1 - stone_2 != 0:
                 heapq.heappush(stones, stone_1 - stone_2)
         if not stones:
             return 0
