@@ -18,9 +18,9 @@ class Solution:
                     if i == 0:
                         isFirstRowZero = True
                         continue
-                    matrix[i][0] = 0 
+                    matrix[i][0] = 0
 
-        # Scan the first column and if the value is 0, set all rows with that row as 0
+        # If the value at 0th index is 0, set all vals in row/column = 0
         for i in range(1, numRows):
             for j in range(1, numCols):    
                 if matrix[i][0] == 0 or matrix[0][j] == 0:
