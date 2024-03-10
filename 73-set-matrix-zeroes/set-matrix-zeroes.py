@@ -20,22 +20,16 @@ class Solution:
                     else:
                         matrix[i][0] = 0 
 
-        # Scan the first row values and if the value is 0, set all rows with that column as 0
-        for j in range(1, numCols):
-            if matrix[0][j] == 0:
-                for i in range(1, numRows):
-                    matrix[i][j] = 0
-
         # Scan the first column and if the value is 0, set all rows with that row as 0
         for i in range(1, numRows):
             for j in range(1, numCols):    
                 if matrix[i][0] == 0 or matrix[0][j] == 0:
                     matrix[i][j] = 0
-        
-        if matrix[0][0] == 0:
-            for i in range(1, numRows):
-                matrix[i][0] = 0
 
+        if matrix[0][0] == 0:
+            for i in range(numRows):
+                matrix[i][0] = 0
+        
         if isFirstRowZero:
             for j in range(numCols):
                     matrix[0][j] = 0
