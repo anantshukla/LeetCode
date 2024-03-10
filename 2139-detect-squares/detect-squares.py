@@ -9,12 +9,11 @@ class DetectSquares:
 
     def count(self, point: List[int]) -> int:
         ans = 0
-        givenX, givenY = point
-        for iterX, iterY in self.points:
+        px, py = point
+        for (x, y), count in self.pointsCount.items():
             # Checking if the iter point forms a diagonal with given point
-            if abs(iterX - givenX) != abs(iterY - givenY) or iterX == givenX or iterY == givenY:
-                continue
-            ans += self.pointsCount[(givenX, iterY)] * self.pointsCount[(iterX, givenY)]
+            if x != px and abs(x - px) == abs(y - py) and (px, y) in self.pointsCount and (x, py) in self.pointsCount:
+                ans += count * self.pointsCount[(px, y)] * self.pointsCount[(x, py)]
         return ans
 
 
