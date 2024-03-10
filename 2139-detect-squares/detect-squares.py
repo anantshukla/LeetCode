@@ -10,7 +10,7 @@ class DetectSquares:
         px, py = point
         for (x, y), count in self.pointsCount.items():
             # Checking if the iter point forms a diagonal with given point
-            if x != px and y != py and abs(x - px) == abs(y - py) and (px, y) in self.pointsCount and (x, py) in self.pointsCount:
+            if abs(x - px) == abs(y - py) and x != px and y != py and (px, y) in self.pointsCount and (x, py) in self.pointsCount:
                 ans += count * self.pointsCount[(px, y)] * self.pointsCount[(x, py)]
         return ans
 
