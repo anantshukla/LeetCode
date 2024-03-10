@@ -17,8 +17,8 @@ class Solution:
                     matrix[0][j] = 0
                     if i == 0:
                         isFirstRowZero = True
-                    else:
-                        matrix[i][0] = 0 
+                        continue
+                    matrix[i][0] = 0 
 
         # Scan the first column and if the value is 0, set all rows with that row as 0
         for i in range(1, numRows):
