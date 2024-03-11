@@ -1,8 +1,7 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        currMax, n = 0, len(prices)
-        l = r = 0
-        while r < n:
+        currMax = l = r = 0
+        while r < len(prices):
             currMax = max(currMax, prices[r] - prices[l])
             if prices[r] - prices[l] < 0:
                 l = r
