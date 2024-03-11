@@ -4,6 +4,7 @@ class Solution:
         while r < len(prices):
             if prices[r] - prices[l] < 0:
                 l = r
+                r += 1
                 continue
             currMax = max(currMax, prices[r] - prices[l])
             r += 1
