@@ -3,10 +3,10 @@ class Solution:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        # In order to do it in O(1) memory complexity, we can do three passes:
+        # In order to do it in O(1) memory complexity, we can do 2 passes of n**2 and 2 passes of n:
         # i. Visit all rows and mark 1st column as 0
-        # ii. Visit all rows and set 0 in column
-        # iii. Visit all columns and set 0 in row
+        # ii. Visit all values and set 0 in row/column
+        # iii. Visit first column then first row if value at 0th index is 0
 
         numRows, numCols = len(matrix), len(matrix[0])
         isFirstRowZero = False
