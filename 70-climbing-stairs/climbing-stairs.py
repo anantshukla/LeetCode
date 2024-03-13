@@ -1,13 +1,12 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        if n == 1:
+        if n == 0 or n == 1:
             return 1
-        onePrev, twoPrev = 1, 1
-        curr = 0
+        prev, curr = 1, 1
         for i in range(2, n + 1):
-            curr = onePrev + twoPrev
-            twoPrev = onePrev
-            onePrev = curr
+            temp = curr
+            curr = prev + curr
+            prev = temp
         return curr
 
         # if n == 1:
