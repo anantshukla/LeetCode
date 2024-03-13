@@ -3,17 +3,15 @@ class Solution {
         if (s.length() != t.length()) {
             return false;
         }
-        int [] arr1 = new int[26];
+        int [] arr = new int[26];
 
-        for (Character c: s.toCharArray()) {
-            arr1[c - 'a']++;
+        for (int i = 0; i < t.length(); i++) {
+            arr[s.charAt(i) - 'a'] += 1;
+            arr[t.charAt(i) - 'a'] -= 1;
         }
 
-        for (Character c: t.toCharArray()) {
-            arr1[c - 'a']--;
-        }
-        for (int val : arr1) {
-            if (val != 0) {
+        for (int i: arr) {
+            if (i != 0) {
                 return false;
             }
         }
