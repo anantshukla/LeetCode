@@ -20,3 +20,4 @@ class Solution:
         
         getDiameter(root)
         return maxHeight
+        
