@@ -1,10 +1,9 @@
 class Solution:
     def countKeyChanges(self, s: str) -> int:
         res = 0
-        lastChar = s[0].lower()
-        for c in s[1:]:
-            if lastChar != c.lower():
-                lastChar = c.lower()
+        n = len(s)
+        for i in range(1, n):
+            if s[i].lower() != s[i - 1].lower():
                 res += 1        
         return res
         
