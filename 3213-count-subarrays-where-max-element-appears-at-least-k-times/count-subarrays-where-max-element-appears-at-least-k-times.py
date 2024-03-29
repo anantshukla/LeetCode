@@ -10,7 +10,7 @@ class Solution:
                 max_count += 1
             
             while max_count == k:
-                res = res + n - r
+                res += n - r
                 if nums[l] == max_v:
                     max_count -= 1
                 l += 1
