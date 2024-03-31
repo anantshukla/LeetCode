@@ -5,5 +5,7 @@
 -- GROUP BY v.visit_id
 -- ORDER BY v.customer_id
 
-SELECT customer_id, COUNT(customer_id) as count_no_trans FROM Visits v WHERE v.visit_id NOT IN (SELECT visit_id FROM Transactions t)
+SELECT customer_id, COUNT(customer_id) as count_no_trans
+FROM Visits
+WHERE visit_id NOT IN (SELECT visit_id FROM Transactions)
 GROUP BY customer_id
